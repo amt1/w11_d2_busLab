@@ -6,10 +6,10 @@ public class Bus {
     private int capacity;
     private String destination;
 
-    public Bus(){
+    public Bus(String destination){
         this.passengers = new ArrayList<>();
         this.capacity = 5;
-        this.destination = "Edinburgh";
+        this.destination = destination;
     }
 
     public int passengerCount(){
@@ -38,5 +38,9 @@ public class Bus {
         return passengers.remove(0);
     }
 
+    public void pickupPassengerFromBusStop(BusStop busstop){
+        Passenger passenger = busstop.removePassenger();
+        passengers.add(passenger);
+    }
 
 }
